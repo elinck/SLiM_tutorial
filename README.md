@@ -111,10 +111,6 @@ number of fixed mutations following the burnin period.
    cat("Actual fixations: " + actual + "\n");
    cat("Ratio, actual/expected: " + (actual/expected) + "\n");
 }
-P(fix) = 0.0951626
-Expected fixations: 19032.5
-Actual fixations: 331
-Ratio, actual/expected: 0.0173913
 ```
 
 Finally, we print out our summary using the `cat()` command, and find beneficial mutations do appear to be interfering with each other.
@@ -143,7 +139,7 @@ initialize() {
 We next set up a fitness "callback" to make the fitness effect of `m2` in `p1` the inverse (e.g. negative) of its impact in `p2`:
 
 ```
-10000 { sim.simulationFinished(); }
+fitness(m2, p1) { return 1/relFitness; }
 ```
 Then, we add two populations, `p1` and `p2`, of size `50` and `500`, respectively, and establish different migration rates in each direction. Note that these rates (`mig1` and `mig2`) are variables, not fixed; this will let us control their value
 across replicate runs below:
