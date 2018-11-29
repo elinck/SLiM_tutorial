@@ -57,7 +57,11 @@ A simple example from SLiM’s readable, extensive manual of how to test for Hil
 (the phenomenon of competing beneficial mutations reducing each other’s fixation probabilities below 
 theoretical expectations) does a nice job highlighting its strengths and getting us used to `Eidos`' syntax.
 
-First, we initialize a suite of basic simulation parameters, including a constant mutation rate (`1e-6`) 
+![The SLiM graphical user inteface.](slimgui.png)   
+
+First, open up the SliM gui. You'll see a console on the bottom left, a window for simulation output, a button to run the simulation and set its speed, and a range of visualtions of individuals and mutations.  
+  
+In the console, we initialize a suite of basic simulation parameters, including a constant mutation rate (`1e-6`) 
 for mutation type "`m1`", which has a dominance coefficient of `0.5`, and a selection coefficient of `0.06` drawn from a fixed fitness effect distribution; a genomic element type to draw on the mutation type at a given frequency, a 
 specific genomic element (an exon) to hold that mutation, a fixed length (`1000000` sites), and fixed recombination rate (`1e-8`):
 
