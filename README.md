@@ -4,8 +4,7 @@ This tutorial (originally put together for UW's Fall 2018 `phyloseminar` and bas
 blog post I wrote for *The Molecular Ecologist*](https://www.molecularecologist.com/2018/05/scriptable-evolutionary-simulations-in-slim-2/))
 provides a very brief but hopefully illustrative example of how to run forward-time scriptable evolutionary
 simulations in Haller and Messer's SLiM (**S**election on **Li**nked **M**utations) platform. We'll
-look at 1) the basic model underpinning SLiM; 2) the basic features of the Eidos programming language;
-and 3) very simple examples of the sort of questions you can answer in SLiM.  
+look at 1) the basic model underpinning SLiM; 2) the basic features of the Eidos programming language; 3) very simple examples of the sort of questions you can answer in SLiM; and 4) how to execute SLiM from the command line. All the code used in this tutorial is available in this repository, as well as a slideshow put together for a lab meeting presentation in the Taylor Lab at CU Boulder in Fall 2019 (`SLiM_tutorial_slides.pdf`).
 
 ## Introduction
 
@@ -120,7 +119,7 @@ Finally, we print out our summary using the `cat()` command, and find beneficial
 While the SLiMgui is probably where you'll want to do most of your experimentation, "production"
 length simulations are probably best initiated from the command line, as you'll likely want to
 run multiple replicates with many generations via a cluster other high powered
-computing resource. To demonstrate, let's simulate the response of selection to an influx of maladaptive alleles under different recipient population sizes.
+computing resource. To demonstrate, let's simulate the response of selection to an influx of maladaptive alleles under different recipient migration rates. 
 
 We'll start by setting up our basic parameters: an overall mutation rate,
 a neutral mutation with dominance coefficient of `0.5` and a fixed ("`f`") fitness effect with a selection coefficient of `0.0`, a nonneutral mutation with a dominance coefficient of `0.5` and an exponential ("`e`") distribution of fitness effects (beneficial in `p1` and deleterious in `p2`; we'll get to that); an exon from base `0` to base `99999` ("`g1`") to hold both mutations, with a relative frequency of `0.99` and `0.01` for neutral and nonneutral mutations, respectively; and a recombination rate:
